@@ -2,8 +2,8 @@ package com.rya.mvp_demo.main;
 
 import android.graphics.Bitmap;
 
-import com.rya.mvp_demo.base.BasePresenter;
-import com.rya.mvp_demo.base.BaseView;
+import com.rya.mvp_demo.base.IBasePresenter;
+import com.rya.mvp_demo.base.IBaseView;
 
 /**
  * Created by ryanyans32 on 2017/5/16.
@@ -13,16 +13,18 @@ import com.rya.mvp_demo.base.BaseView;
  */
 
 public interface MainContract {
-    interface View extends BaseView {
-        void showPic(Bitmap bitmap);
+    interface View extends IBaseView {
+        void showPic();
 
         void hidePic();
+
+        void changePic(Bitmap bitmap);
     }
 
-    interface Presenter extends BasePresenter {
+    interface Presenter<V extends IBaseView> extends IBasePresenter<V> {
         void changePic();
 
-        void shwoPic();
+        void showPic();
 
         void hidePic();
     }

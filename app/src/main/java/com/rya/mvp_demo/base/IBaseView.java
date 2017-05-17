@@ -7,6 +7,6 @@ package com.rya.mvp_demo.base;
  * Email : ryanyans32@gmail.com
  */
 
-public interface BaseView {
+public interface IBaseView {
 
 }
